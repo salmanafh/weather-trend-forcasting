@@ -93,10 +93,22 @@ Dataset yang digunakan berasal dari [Global Weather Repository](https://www.kagg
 - moon_phase: Fase bulan saat ini
 - moon_illumination: Persentase iluminasi bulan
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+### Explorasi Data
+
+* Data divisualisasikan menggunakan histogram dan heatmap untuk memahami distribusi dan korelasi antar variabel.
 
 ![Heat Map](https://github.com/salmanafh/weather-trend-forcasting/blob/d71be5c35a6583b092a377606b1695b20a6a88c7/corr%20map.png)
+
+* Selain itu, analisis tren dilakukan untuk memahami pola perubahan cuaca dari waktu ke waktu. Grafik tren kecepatan angin menunjukkan adanya pola musiman yang signifikan,
+
+![Wind Speed Trend]()
+
+* Peningkatan suhu pada bulan-bulan tertentu dan penurunan pada bulan lainnya
+
+
+* Curah hujan juga menunjukkan pola fluktuatif yang berkaitan dengan perubahan musim. Informasi ini membantu dalam mengidentifikasi pola utama yang dapat digunakan untuk meningkatkan akurasi model prediksi cuaca.
+
+
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
