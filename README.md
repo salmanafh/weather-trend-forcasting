@@ -101,10 +101,11 @@ Dataset yang digunakan berasal dari [Global Weather Repository](https://www.kagg
 
 * Selain itu, analisis tren dilakukan untuk memahami pola perubahan cuaca dari waktu ke waktu. Grafik tren kecepatan angin menunjukkan adanya pola musiman yang signifikan,
 
-![Wind Speed Trend]()
+![Wind Speed Trend](https://github.com/salmanafh/weather-trend-forcasting/blob/main/wind%20speed%20trend.png)
 
 * Peningkatan suhu pada bulan-bulan tertentu dan penurunan pada bulan lainnya
 
+![Temperature Trend](https://github.com/salmanafh/weather-trend-forcasting/blob/main/temperature%20trend.png)
 
 * Curah hujan juga menunjukkan pola fluktuatif yang berkaitan dengan perubahan musim. Informasi ini membantu dalam mengidentifikasi pola utama yang dapat digunakan untuk meningkatkan akurasi model prediksi cuaca.
 
