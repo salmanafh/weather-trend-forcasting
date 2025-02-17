@@ -161,22 +161,38 @@ Metric Berikut menjelaskan model dengan performa terbaik
 
 Mengukur persentase prediksi yang benar terhadap total prediksi.
 
-$$ TP + TN / N $$
+$$ Accuracy = TP + TN / N $$
 
-![Model Perform](https://github.com/salmanafh/weather-trend-forcasting/blob/205b0f0a9fb2341318496833e96965a83a59cfce/validation%20accuracy.png)
+![Model Accuracy](https://github.com/salmanafh/weather-trend-forcasting/blob/205b0f0a9fb2341318496833e96965a83a59cfce/validation%20accuracy.png)
 
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
+Dari grafik, model Neural Network dan XGB memiliki akurasi lebih tinggi dibandingkan Random Forest.
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+### Recall
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+Recall mengukur proporsi kasus positif yang berhasil diidentifikasi dengan benar.
 
-**---Ini adalah bagian akhir laporan---**
+$$ Recall = TP / (TP + FN) $$
 
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
+![Model Recall](https://github.com/salmanafh/weather-trend-forcasting/blob/main/Recall.png)
 
+Model Neural Network dan XGB memiliki recall yang lebih tinggi dibandingkan Random Forest, menunjukkan bahwa keduanya lebih baik dalam mengenali kasus positif.
+
+### Precision
+
+Precision mengukur proporsi prediksi positif yang benar terhadap total prediksi positif.
+
+$$ Precision = TP / (TP + FP) $$
+
+![Model Precision](https://github.com/salmanafh/weather-trend-forcasting/blob/main/Precision.png)
+
+Model XGB dan Random Forest memiliki precision yang lebih tinggi dibandingkan Neural Network.
+
+### F1 Score
+
+F1 score adalah rata-rata harmonik dari precision dan recall, digunakan untuk menyeimbangkan false positives dan false negatives.
+
+$$ F1 Score = 2 x (Precision x Recall) / (Precision + Recall) $$
+
+![Model Recall](https://github.com/salmanafh/weather-trend-forcasting/blob/main/F1%20Score.png)
+
+Model XGB dan Neural Network memiliki F1-score lebih tinggi dibandingkan Random Forest, menunjukkan bahwa keduanya lebih seimbang dalam menangani positif dan negatif.
