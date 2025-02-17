@@ -109,25 +109,59 @@ Dataset yang digunakan berasal dari [Global Weather Repository](https://www.kagg
 
 * Curah hujan juga menunjukkan pola fluktuatif yang berkaitan dengan perubahan musim. Informasi ini membantu dalam mengidentifikasi pola utama yang dapat digunakan untuk meningkatkan akurasi model prediksi cuaca.
 
-
+![Humidity](https://github.com/salmanafh/weather-trend-forcasting/blob/main/humidity%20trend.png)
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+* One-Hot Encoding: Mengonversi data kategori menjadi bentuk numerik untuk memastikan bahwa model dapat memahami informasi dari variabel kategori dengan benar. Teknik ini digunakan agar data dapat digunakan oleh algoritma machine learning yang sebagian besar hanya dapat bekerja dengan nilai numerik.
+
+~~~
+# one-hot encode the categorical columns
+encoder = OneHotEncoder()
+encoded = encoder.fit_transform(df[categorical_columns])
+encoded_df = pd.DataFrame(encoded.toarray(), columns=encoder.get_feature_names_out(categorical_columns))
+
+# concatenate one-hot encoded columns with the original dataframe
+df = pd.concat([df, encoded_df], axis=1)
+df = df.drop(categorical_columns, axis=1)
+~~~
+
+* Feature Scaling: Normalisasi atau standarisasi fitur dilakukan untuk memastikan bahwa semua variabel berada dalam skala yang sama. Hal ini sangat penting karena model machine learning, terutama yang berbasis gradien seperti XGBoost atau ANN, lebih sensitif terhadap perbedaan skala antar fitur.
+
+~~~
+# normalize numerical columns
+df[numerical_columns] = preprocessing.normalize(df[numerical_columns])
+~~~
+
+* Splitting Data: Data dibagi menjadi set pelatihan dan pengujian untuk menghindari overfitting serta mengevaluasi kinerja model pada data yang belum pernah dilihat sebelumnya. Proporsi pembagian data yang umum digunakan adalah 80% untuk pelatihan dan 20% untuk pengujian.
+
+~~~
+# train test split
+X = df.drop(["condition_text", "last_updated"], axis=1)
+y = encoded_label.toarray()
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+~~~
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+### Model 1: XGBoost
+* Keunggulan: Cepat, efisien, mampu menangani dataset besar, memiliki mekanisme regularisasi untuk mengatasi overfitting, dan bekerja baik dengan data yang tidak seimbang.
+* Kelemahan: Membutuhkan lebih banyak sumber daya komputasi, rentan terhadap overfitting tanpa tuning yang tepat, dan memiliki waktu pelatihan yang lebih lama dibandingkan model sederhana..
+
+### Model 2: Random Forest
+* Keunggulan: Mampu menangani fitur yang kompleks dan tidak linear.
+* Kelemahan: Rentan terhadap overfitting jika tidak ditangani dengan baik.
+
+### Model 3: Deep Learning (ANN)
+* Keunggulan: Bisa Menangkap pola non-linear yang kompleks.
+* Kelemahan: Membutuhkan lebih banyak data dan waktu pelatihan yang lebih lama.
+
 
 ## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
+
+Metric Berikut menjelaskan model dengan performa terbaik
+![Model Perform](https://github.com/salmanafh/weather-trend-forcasting/blob/205b0f0a9fb2341318496833e96965a83a59cfce/validation%20accuracy.png)
 
 Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
 - Penjelasan mengenai metrik yang digunakan
