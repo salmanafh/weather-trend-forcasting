@@ -5,7 +5,6 @@
 ### Latar Belakang
 Perubahan iklim dan variabilitas cuaca yang semakin tidak menentu menuntut adanya metode peramalan cuaca yang lebih akurat. Peramalan tren cuaca dapat membantu berbagai sektor, termasuk pertanian, transportasi, dan kebijakan lingkungan, dalam mengambil keputusan yang lebih tepat. Dengan kemajuan teknologi machine learning dan deep learning, peramalan cuaca dapat dilakukan secara lebih efektif menggunakan data historis.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
 ### Urgensi
 Cuaca yang tidak dapat diprediksi dengan baik dapat menyebabkan berbagai permasalahan, seperti gagal panen, gangguan transportasi, dan dampak buruk pada kesehatan masyarakat. Oleh karena itu, diperlukan model yang dapat mengidentifikasi pola cuaca berdasarkan data historis dan memberikan prediksi yang akurat.
 
@@ -30,9 +29,7 @@ Beberapa penelitian telah membuktikan bahwa machine learning dan deep learning d
 
 * Mengevaluasi performa model menggunakan metrik evaluasi yang sesuai.
 
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
 ### Solusi yang Diusulkan
 Dua pendekatan utama yang digunakan:
 
@@ -51,22 +48,60 @@ Dua pendekatan utama yang digunakan:
 * Confusion Matrix: Menganalisis distribusi prediksi yang benar dan salah.
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
+Dataset yang digunakan berasal dari [Global Weather Repository](https://www.kaggle.com/datasets/nelgiriyewithana/global-weather-repository/data) di Kaggle, yang mencakup berbagai parameter cuaca dari berbagai lokasi di dunia. Dataset ini memiliki jumlah entri yang cukup besar untuk memungkinkan analisis tren cuaca secara komprehensif. Meskipun tidak terdapat nilai yang hilang dalam dataset, beberapa variabel memerlukan transformasi untuk memastikan bahwa model machine learning dapat memprosesnya secara efektif.
 
-Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
-
-### Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
+### Variabel-variabel pada Global Weather Repository adalah sebagai berikut:
+- country: Negara tempat data cuaca berada
+- location_name: Nama lokasi (kota)
+- latitude: Koordinat lintang lokasi
+- longitude: Koordinat bujur lokasi
+- timezone: Zona waktu lokasi
+- last_updated_epoch: Stempel waktu Unix dari pembaruan data terakhir
+- last_updated: Waktu lokal dari pembaruan data terakhir
+- temperature_celsius: Suhu dalam derajat Celsius
+- temperature_fahrenheit: Suhu dalam derajat Fahrenheit
+- condition_text: Deskripsi kondisi cuaca
+- wind_mph: Kecepatan angin dalam mil per jam
+- wind_kph: Kecepatan angin dalam kilometer per jam
+- wind_degree: Arah angin dalam derajat
+- wind_direction: Arah angin sebagai kompas 16 titik
+- pressure_mb: Tekanan dalam milibar
+- pressure_in: Tekanan dalam inci
+- precip_mm: Jumlah curah hujan dalam milimeter
+- precip_in: Jumlah curah hujan dalam inci
+- humidity: Kelembaban sebagai persentase
+- cloud: Tutupan awan sebagai persentase
+- feels_like_celsius: Suhu yang terasa dalam Celsius
+- feels_like_fahrenheit: Suhu yang terasa dalam Fahrenheit
+- visibility_km: Visibilitas dalam kilometer
+- visibility_miles: Visibilitas dalam mil
+- uv_index: Indeks UV
+- gust_mph: Hembusan angin dalam mil per jam
+- gust_kph: Hembusan angin dalam kilometer per jam
+- air_quality_Carbon_Monoxide: Pengukuran kualitas udara: Karbon Monoksida
+- air_quality_Ozone: Pengukuran kualitas udara: Ozon
+- air_quality_Nitrogen_dioxide: Pengukuran kualitas udara: Nitrogen Dioksida
+- air_quality_Sulphur_dioxide: Pengukuran kualitas udara: Sulfur Dioksida
+- air_quality_PM2.5: Pengukuran kualitas udara: PM2.5
+- air_quality_PM10: Pengukuran kualitas udara: PM10
+- air_quality_us-epa-index: Pengukuran kualitas udara: Indeks EPA AS
+- air_quality_gb-defra-index: Pengukuran kualitas udara: Indeks DEFRA GB
+- sunrise: Waktu matahari terbit setempat
+- sunset: Waktu setempat saat matahari terbenam
+- moonrise: Waktu setempat saat bulan terbit
+- moonset: Waktu setempat saat bulan terbenam
+- moon_phase: Fase bulan saat ini
+- moon_illumination: Persentase iluminasi bulan
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
 
+![Heat Map](https://drive.google.com/file/d/11jwfXRsWTZUoKE4xQzcYJlSICY5gv91W/view?usp=sharing)
+
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
+**Rubrik/Kriteria Tambahan (Opsional)**:
 - Menjelaskan proses data preparation yang dilakukan
 - Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
 
