@@ -96,7 +96,7 @@ Dataset yang digunakan berasal dari [Global Weather Repository](https://www.kagg
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
 
-![Heat Map](https://drive.google.com/file/d/11jwfXRsWTZUoKE4xQzcYJlSICY5gv91W/view?usp=sharing)
+![Heat Map](https://github.com/salmanafh/weather-trend-forcasting/blob/d71be5c35a6583b092a377606b1695b20a6a88c7/corr%20map.png)
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
