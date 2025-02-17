@@ -161,7 +161,7 @@ Metric Berikut menjelaskan model dengan performa terbaik
 
 Mengukur persentase prediksi yang benar terhadap total prediksi.
 
-$$ (TP + TN) / N $$
+$$ TP + TN / N $$
 
 ![Model Perform](https://github.com/salmanafh/weather-trend-forcasting/blob/205b0f0a9fb2341318496833e96965a83a59cfce/validation%20accuracy.png)
 
