@@ -191,7 +191,7 @@ Model XGB dan Random Forest memiliki precision yang lebih tinggi dibandingkan Ne
 
 F1 score adalah rata-rata harmonik dari precision dan recall, digunakan untuk menyeimbangkan false positives dan false negatives.
 
-$$ F1 Score = 2 x (Precision x Recall) / (Precision + Recall) $$
+$$ F1 Score = 2 * (Precision * Recall) / (Precision + Recall) $$
 
 ![Model Recall](https://github.com/salmanafh/weather-trend-forcasting/blob/main/F1%20Score.png)
 
