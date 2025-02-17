@@ -1,43 +1,54 @@
-# Laporan Proyek Machine Learning - Nama Anda
+# Laporan Proyek Machine Learning - Salman Al Farizi Harahap
 
 ## Domain Proyek
 
-Pada bagian ini, kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
+### Latar Belakang
+Perubahan iklim dan variabilitas cuaca yang semakin tidak menentu menuntut adanya metode peramalan cuaca yang lebih akurat. Peramalan tren cuaca dapat membantu berbagai sektor, termasuk pertanian, transportasi, dan kebijakan lingkungan, dalam mengambil keputusan yang lebih tepat. Dengan kemajuan teknologi machine learning dan deep learning, peramalan cuaca dapat dilakukan secara lebih efektif menggunakan data historis.
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-  
-  Format Referensi: [Judul Referensi](https://scholar.google.com/) 
+### Urgensi
+Cuaca yang tidak dapat diprediksi dengan baik dapat menyebabkan berbagai permasalahan, seperti gagal panen, gangguan transportasi, dan dampak buruk pada kesehatan masyarakat. Oleh karena itu, diperlukan model yang dapat mengidentifikasi pola cuaca berdasarkan data historis dan memberikan prediksi yang akurat.
+
+### Referensi dan Riset terkait
+Beberapa penelitian telah membuktikan bahwa machine learning dan deep learning dapat meningkatkan akurasi prediksi cuaca. Misalnya:
+
+* ["Weather Forecasting Using Machine Learning Techniques" (Sharma et al., 2020)](https://ieeexplore.ieee.org/abstract/document/10434670)
+
+* ["A Comparative Study of Machine Learning Models for Weather Prediction" (Singh et al., 2021)](https://www.researchgate.net/publication/355783139_A_comparative_study_of_extensive_machine_learning_models_for_predicting_long-term_monthly_rainfall_with_an_ensemble_of_climatic_and_meteorological_predictors)
 
 ## Business Understanding
 
-Pada bagian ini, kamu perlu menjelaskan proses klarifikasi masalah.
-
-Bagian laporan ini mencakup:
-
 ### Problem Statements
 
-Menjelaskan pernyataan masalah latar belakang:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
+* Bagaimana cara mengembangkan model machine learning yang dapat memprediksi tren cuaca secara akurat?
+
+* Algoritma mana yang memberikan performa terbaik dalam peramalan tren cuaca?
 
 ### Goals
 
-Menjelaskan tujuan dari pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
+* Mengembangkan model machine learning yang mampu memprediksi tren cuaca dengan akurasi tinggi.
+
+* Mengevaluasi performa model menggunakan metrik evaluasi yang sesuai.
 
 Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
+### Solusi yang Diusulkan
+Dua pendekatan utama yang digunakan:
 
-    ### Solution statements
-    - Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
-    - Solusi yang diberikan harus dapat terukur dengan metrik evaluasi.
+* Naive Bayes: Algoritma probabilistik yang sederhana namun efektif dalam klasifikasi data cuaca.
+
+* Random Forest & XGBoost: Algoritma ensemble yang mampu menangani data kompleks dan meningkatkan akurasi.
+
+* Deep Learning (Artificial Neural Networks): Model berbasis jaringan saraf untuk menangkap pola non-linear dalam data cuaca.
+
+### Metric Evaluasi
+
+* Accuracy: Mengukur persentase prediksi yang benar.
+
+* Precision, Recall, dan F1-score: Digunakan untuk mengevaluasi performa model dalam menangani kelas yang tidak seimbang.
+
+* Confusion Matrix: Menganalisis distribusi prediksi yang benar dan salah.
 
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
