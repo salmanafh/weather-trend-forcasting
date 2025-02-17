@@ -116,12 +116,10 @@ Dataset yang digunakan berasal dari [Global Weather Repository](https://www.kagg
 * One-Hot Encoding: Mengonversi data kategori menjadi bentuk numerik untuk memastikan bahwa model dapat memahami informasi dari variabel kategori dengan benar. Teknik ini digunakan agar data dapat digunakan oleh algoritma machine learning yang sebagian besar hanya dapat bekerja dengan nilai numerik.
 
 ~~~
-# one-hot encode the categorical columns
 encoder = OneHotEncoder()
 encoded = encoder.fit_transform(df[categorical_columns])
 encoded_df = pd.DataFrame(encoded.toarray(), columns=encoder.get_feature_names_out(categorical_columns))
 
-# concatenate one-hot encoded columns with the original dataframe
 df = pd.concat([df, encoded_df], axis=1)
 df = df.drop(categorical_columns, axis=1)
 ~~~
@@ -129,14 +127,12 @@ df = df.drop(categorical_columns, axis=1)
 * Feature Scaling: Normalisasi atau standarisasi fitur dilakukan untuk memastikan bahwa semua variabel berada dalam skala yang sama. Hal ini sangat penting karena model machine learning, terutama yang berbasis gradien seperti XGBoost atau ANN, lebih sensitif terhadap perbedaan skala antar fitur.
 
 ~~~
-# normalize numerical columns
 df[numerical_columns] = preprocessing.normalize(df[numerical_columns])
 ~~~
 
 * Splitting Data: Data dibagi menjadi set pelatihan dan pengujian untuk menghindari overfitting serta mengevaluasi kinerja model pada data yang belum pernah dilihat sebelumnya. Proporsi pembagian data yang umum digunakan adalah 80% untuk pelatihan dan 20% untuk pengujian.
 
 ~~~
-# train test split
 X = df.drop(["condition_text", "last_updated"], axis=1)
 y = encoded_label.toarray()
 
@@ -161,6 +157,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 ## Evaluation
 
 Metric Berikut menjelaskan model dengan performa terbaik
+### Accuracy
+
+Mengukur persentase prediksi yang benar terhadap total prediksi.
+
+$$ (TP + TN) / N $$
+
 ![Model Perform](https://github.com/salmanafh/weather-trend-forcasting/blob/205b0f0a9fb2341318496833e96965a83a59cfce/validation%20accuracy.png)
 
 Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
